@@ -8,10 +8,10 @@ class App extends Component{
     super(props);
     this.state = {
       feed:[
-        {id: 1, usarname: 'Herberton', curtidas: 10, comentarios: 2},
-        {id: 2, usarname: 'Miguel', curtidas: 11, comentarios: 3},
-        {id: 3, usarname: 'Rafael', curtidas: 12, comentarios: 4},
-        {id: 4, usarname: 'Carol', curtidas: 13, comentarios: 5},
+        {id: 1, username: 'Herberton', curtidas: 10, comentarios: 2},
+        {id: 2, username: 'Miguel', curtidas: 11, comentarios: 3},
+        {id: 3, username: 'Rafael', curtidas: 12, comentarios: 4},
+        {id: 4, username: 'Carol', curtidas: 1, comentarios: 1},
       ]
     };
   }
@@ -21,7 +21,7 @@ class App extends Component{
       <div>
         {this.state.feed.map((item)=>{
           return(
-            <Feed/>
+            <Feed key={item.id} username={item.username} curtidas={item.curtidas} comentarios={item.comentarios}/>
           )
         })}
       </div>
